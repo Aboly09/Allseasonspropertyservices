@@ -6,39 +6,43 @@
 
   <style>
     body {
-      background: #f4f9ff;
-      color: #1a2b3c;
+      background: #0f172a; /* dark navy */
+      color: #e2e8f0; /* light gray */
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background: linear-gradient(135deg, #0077cc, #005fa3);
+      background: linear-gradient(135deg, #1e293b, #0f172a);
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 5px;
+      font-size: 2.6em;
+      margin-bottom: 8px;
     }
 
     .section {
       padding: 30px 40px;
-      background: white;
+      background: #1e293b; /* slate */
       margin: 30px auto;
       width: 85%;
       border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
     }
 
     h2 {
-      color: #005fa3;
+      color: #38bdf8; /* bright blue */
       margin-bottom: 20px;
-      font-size: 1.8em;
+      font-size: 1.9em;
+    }
+
+    h3 {
+      color: #7dd3fc;
     }
 
     .service-block {
@@ -52,7 +56,7 @@
       object-fit: cover;
       border-radius: 12px;
       margin-top: 15px;
-      border: 3px solid #0077cc;
+      border: 3px solid #38bdf8;
     }
 
     ul {
@@ -60,7 +64,59 @@
       font-size: 1.15em;
     }
 
-    /* Modern Form Styling */
+    /* Pricing Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .price-card {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid #38bdf8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .price-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price-card p {
+      font-size: 1.1em;
+      color: #e2e8f0;
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .testimonial {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #38bdf8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .testimonial p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .testimonial .name {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #7dd3fc;
+    }
+
+    /* Appointment Form */
     .appointment-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -76,34 +132,36 @@
     .appointment-form select,
     .appointment-form textarea {
       padding: 14px;
-      border: 2px solid #0077cc;
+      border: 2px solid #38bdf8;
       border-radius: 10px;
       font-size: 1em;
-      background: #f8fbff;
+      background: #0f172a;
+      color: #e2e8f0;
     }
 
     .appointment-form button {
       grid-column: span 2;
-      background: #0077cc;
-      color: white;
+      background: #38bdf8;
+      color: #0f172a;
       padding: 16px;
       border: none;
       border-radius: 10px;
       font-size: 1.2em;
       cursor: pointer;
       transition: 0.2s;
+      font-weight: bold;
     }
 
     .appointment-form button:hover {
-      background: #005fa3;
+      background: #7dd3fc;
       transform: translateY(-2px);
     }
 
     footer {
       text-align: center;
       padding: 25px;
-      background: #005fa3;
-      color: white;
+      background: #0f172a;
+      color: #7dd3fc;
       margin-top: 50px;
       font-size: 1.1em;
     }
@@ -125,10 +183,10 @@
   <h2>Call or text: 804‑634‑5327</h2>
 </div>
 
+<!-- SERVICES -->
 <div class="section">
   <h2>Services We Offer</h2>
 
-  <!-- Lawn & Yard Work -->
   <div class="service-block">
     <h3>Lawn & Yard Work</h3>
     <ul>
@@ -138,10 +196,9 @@
       <li>Mulching (spreading only)</li>
       <li>Leaf raking and yard cleanups</li>
     </ul>
-    <img src="https://via.placeholder.com/350x220?text=Lawn+Mowing" alt="Lawn mowing">
+    <img src="https://via.placeholder.com/350x220?text=Lawn+Mowing">
   </div>
 
-  <!-- Seasonal Work -->
   <div class="service-block">
     <h3>Seasonal Work</h3>
     <ul>
@@ -150,49 +207,101 @@
       <li>Snow shoveling and sidewalk clearing</li>
       <li>Storm debris cleanup</li>
     </ul>
-    <img src="https://via.placeholder.com/350x220?text=Leaf+Cleanup" alt="Leaf cleanup">
+    <img src="https://via.placeholder.com/350x220?text=Leaf+Cleanup">
   </div>
 
-  <!-- Property Upkeep -->
   <div class="service-block">
     <h3>Property Upkeep</h3>
     <ul>
-      <li>Pressure washing (driveways, sidewalks, patios)</li>
-      <li>Gutter cleaning (ground‑level or single‑story only)</li>
+      <li>Pressure washing</li>
+      <li>Gutter cleaning</li>
       <li>Trash and debris removal</li>
       <li>Garage and shed cleanouts</li>
     </ul>
-    <img src="https://via.placeholder.com/350x220?text=Pressure+Washing" alt="Pressure washing">
+    <img src="https://via.placeholder.com/350x220?text=Pressure+Washing">
   </div>
 
-  <!-- General Labor -->
   <div class="service-block">
     <h3>General Labor / Odd Jobs</h3>
     <ul>
-      <li>Moving heavy items (within reason)</li>
-      <li>Outdoor furniture setup and breakdown</li>
-      <li>Basic fence or deck cleaning</li>
+      <li>Moving heavy items</li>
+      <li>Furniture setup</li>
+      <li>Fence/deck cleaning</li>
       <li>Simple painting or staining</li>
       <li>General help around the house</li>
     </ul>
-    <img src="https://via.placeholder.com/350x220?text=General+Labor" alt="General labor">
+    <img src="https://via.placeholder.com/350x220?text=General+Labor">
   </div>
 </div>
 
-<!-- APPOINTMENT SECTION -->
+<!-- PRICING -->
+<div class="section">
+  <h2>Pricing</h2>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Lawn & Yard Work</h3>
+      <p>Mowing: $25–$45</p>
+      <p>Hedge trimming: $20–$40</p>
+      <p>Weeding/cleanup: $20–$35</p>
+      <p>Mulch spreading: $25–$60</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Seasonal Work</h3>
+      <p>Leaf removal: $30–$70</p>
+      <p>Snow shoveling: $20–$40</p>
+      <p>Storm cleanup: $40–$80</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Property Upkeep</h3>
+      <p>Pressure washing: $40–$90</p>
+      <p>Gutter cleaning: $25–$45</p>
+      <p>Trash removal: $20–$50</p>
+    </div>
+
+    <div class="price-card">
+      <h3>General Labor</h3>
+      <p>Moving items: $20–$40</p>
+      <p>Furniture setup: $15–$30</p>
+      <p>Painting/staining: $25–$60</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+  <h2>What Our Customers Say</h2>
+
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <p>“Anderson and his team did an amazing job cleaning up our yard. Fast, friendly, and affordable.”</p>
+      <div class="name">— Sarah M.</div>
+    </div>
+
+    <div class="testimonial">
+      <p>“Reliable and hardworking. They shoveled our driveway during a snowstorm and were here within an hour.”</p>
+      <div class="name">— James R.</div>
+    </div>
+
+    <div class="testimonial">
+      <p>“Great communication and excellent work. The pressure washing made our patio look brand new.”</p>
+      <div class="name">— Emily K.</div>
+    </div>
+  </div>
+</div>
+
+<!-- APPOINTMENT FORM -->
 <div class="section">
   <h2>Book an Appointment</h2>
   <p>Fill out the form below and we’ll get back to you quickly to confirm your appointment.</p>
 
   <form class="appointment-form" action="https://formsubmit.co/andersonbolyard@icloud.com" method="POST">
 
-    <!-- Name -->
     <input type="text" name="name" placeholder="Your Name" required>
-
-    <!-- Phone -->
     <input type="tel" name="phone" placeholder="Phone Number" required>
 
-    <!-- Service Dropdown -->
     <select name="service" required>
       <option value="" disabled selected>Select a Service</option>
       <option>Lawn Mowing</option>
@@ -204,16 +313,11 @@
       <option>General Labor / Odd Jobs</option>
     </select>
 
-    <!-- Date -->
     <input type="date" name="date" required>
-
-    <!-- Time Selector -->
     <input type="time" name="time" required>
 
-    <!-- Message -->
     <textarea name="message" rows="4" placeholder="Describe what you need done" required></textarea>
 
-    <!-- FormSubmit settings -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
 
