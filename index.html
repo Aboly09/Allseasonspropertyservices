@@ -52,6 +52,36 @@
       font-size: 1.1em;
     }
 
+    /* Appointment Form Styling */
+    .appointment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .appointment-form input,
+    .appointment-form textarea {
+      padding: 12px;
+      border: 2px solid #0077cc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .appointment-form button {
+      background: #0077cc;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .appointment-form button:hover {
+      background: #005fa3;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -129,7 +159,25 @@
     </ul>
     <img src="https://via.placeholder.com/300?text=General+Labor" alt="General labor">
   </div>
+</div>
 
+<!-- APPOINTMENT SECTION -->
+<div class="section">
+  <h2>Book an Appointment</h2>
+  <p>Fill out the form below and we’ll get back to you quickly to confirm your appointment.</p>
+
+  <form class="appointment-form" action="https://formsubmit.co/andersonbolyard@icloud.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="date" name="date" required>
+    <textarea name="message" rows="4" placeholder="What service do you need?" required></textarea>
+
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <button type="submit">Request Appointment</button>
+  </form>
 </div>
 
 <footer>
